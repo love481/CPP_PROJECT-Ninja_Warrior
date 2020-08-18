@@ -1,6 +1,6 @@
 /* Author:Love Panta
  *email:075bei016.love@pcampus.edu.np
- *date:20,06/2020
+ *date:20/06/2020
  */
 #include <SFML/Graphics.hpp>
 #include<iostream>
@@ -11,6 +11,7 @@
 #include<vector>
 
 sf::RenderWindow window(sf::VideoMode(1000,700), "my project");
+// handles menu class
 class MENU{
 private:
     sf::Sprite play,Exit,background;
@@ -32,7 +33,7 @@ public:
         Exit.setPosition(490,425);
         return Exit;
     }
-    void TEXT()
+    void TEXT() // load all text on to the window
     {
         font.loadFromFile("CASTELAR.ttf");
         text[0].setFont(font);
@@ -56,7 +57,7 @@ public:
         window.draw(text[2]);
     }
 };
-class BulletV
+class BulletV // bullet handle for villain
 { private:
         sf::Sprite bullet;
         int a,b;
@@ -76,7 +77,8 @@ class BulletV
        {return a;}
        int getTop()
        {return b;}
-};
+}; 
+// handles all background music ,tones and sounds
 class SOUND{
  private:
      sf::Music mu;
@@ -107,7 +109,7 @@ class shootsound{
          return sp;
      }
 };
-class Sprite
+class Sprite // handles sprites for the walking  lady sprites
 { char spR[8][60]={"l-0.png","l-1.png","l-2.png","l-3.png","l-4.png","l-5.png","l-6.png","l-7.png"};
   char spL[8][60]={"l-8.png","l-9.png","l-10.png","l-11.png","l-12.png","l-13.png","l-14.png","l-15.png"};
   sf::Sprite lady;
@@ -157,7 +159,7 @@ class healthscore
            level.move(x+70,y);
            window.draw(level);}}
 };
-class BulletS
+class BulletS // handles bullut for lady sprite
 {  private:
      sf::Sprite bullet;
      sf::Texture bul;
@@ -185,7 +187,7 @@ class BulletS
        void setPos(sf::Vector2f newPos)
        {bullet.setPosition(newPos);}
 };
-class villain1
+class villain1 // handles villain sprites
 {  char spL[11][60]={"L1E.png","L2E.png","L3E.png","L4E.png","L5E.png","L6E.png","L7E.png","L8E.png","L9E.png","L10E.png","L11E.png"};
    char spR[11][60]={"R1E.png","R2E.png","R3E.png","R4E.png","R5E.png","R6E.png","R7E.png","R8E.png","R9E.png","R10E.png","R11E.png"};
    sf::Sprite opposition;
@@ -207,7 +209,7 @@ class villain1
                   decrease+=2.5;}
                  }
 };
-class background
+class background   // window backgroud
 {   sf::Sprite imagebg,imageplate1[5],imageplate2[5],imageplate3[5];
     sf::Texture t,plate1[5],plate2[5],plate3[5];
    int i,a;

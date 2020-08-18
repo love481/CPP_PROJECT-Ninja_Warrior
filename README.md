@@ -1,2 +1,2 @@
-# GamesMyProject
-I have made this games during my project submission for c and c++ programming language
+# GameMYProject
+I have made this game during my project submission for c and c++ programming language
